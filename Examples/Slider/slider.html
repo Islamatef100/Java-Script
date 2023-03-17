@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="1.css">
+    <title>automation slider</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+      <style>
+        .ecom{
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          z-index: -10;
+        }
+        .swapping{
+          display: flex;
+          justify-content: space-between;
+          color: white;
+          margin-top: 50vh;
+          padding: 30px;
+          font-size: 40px;
+          
+        }
+        .swapping i{
+          cursor: pointer;
+        }
+      </style>
+    </head>
+<body>
+  <img  id="imge" class="ecom" src="./imgs/e-commerce-online-shopping-business-technology-concept-screen-e-commerce-online-shopping-business-technology-concept-screen-207950081.jpg">  
+  <div class="swapping">
+    <i  id="left" class="fa-solid fa-angle-left"></i>
+    <i id="right" class="fa-solid fa-angle-right"></i>
+  </div>  
+</div>
+
+
+
+
+
+
+  <script src="./main.js"></script>
+  <script>
+    const images = [
+        {
+          img: "./imgs/depositphotos_54324565-stock-photo-online-shopping-and-e-commerce.jpg"
+        },
+        {
+          img: "./imgs/istockphoto-1133980246-612x612.jpg"
+        },
+        {
+          img: "./imgs/istockphoto-1206800961-612x612.jpg"
+        },
+        {
+          img: "./imgs/WhatsApp Image 2023-02-21 at 6.12.00 PM.jpeg"
+
+        }
+      ]
+      let butleft = document.getElementById('left')
+      let butright = document.getElementById('right')
+      let imge = document.getElementById('imge')
+      let count = 0
+      butright.onclick = () => {
+        if (count === images.length)
+          count = 0;
+        imge.src = images[count].img;
+        count++
+
+      }
+      butleft.onclick = () => {
+        if (count === 0)
+          count = images.length - 1;
+        imge.src = images[count].img;
+        count--
+      }
+      setInterval(() => {
+        if (count === images.length)
+          count = 0;
+        imge.src = images[count].img;
+        count++
+      }, 1000)
+    
+
+  </script>
+</body>
+</html>
