@@ -30,19 +30,12 @@ addUser.onclick = () => {
 }
 exit.onclick = () => {
     FormView.style.display = 'none';
-    exit.onmouseover = () => exit.style.color = 'red'
-    exit.onmouseleave = () => exit.style.color = 'black'
     clearform()
+    exit.onmouseover = () => exit.style = `color:red`
+    exit.onmouseleave = () => exit.style.color = 'black'
+    
 }
-let check = (value) => {
-    if (value === "")
-    {
-        window.alert("enter correct value")
-        return 0
-    }
-    else
-        return 1
-}
+
 let data = {}
 function addContactData() {
      let row=``
@@ -75,14 +68,30 @@ function addDataTodataSet() {
         })
     window.localStorage.setItem("data",JSON.stringify(contactData))
 }
-let saveUserData = (e) => {
-    e.preventDefault()
-    addDataTodataSet()
-    addContactData()
-    clearform()
-    console.log(contactData)
-    FormView.style.display = 'none';
+let check = () => {
+    if ( username.value === "")
+        return 0;
+    else if (userphonenumber.value==="")
+        return 0;
+     else if ( userEmail.value==="")
+        return 0;
+     else if (userAdress.value==="")
+        return 0;
+    else
+        return 1
 }
+
+let saveUserData = (e) => {
+    if (check()) { 
+        e.preventDefault()
+        addDataTodataSet()
+        addContactData()
+        clearform()
+        FormView.style.display = 'none';
+    }
+
+}
+
 submitdata.addEventListener('click',saveUserData)
 addContact.onclick = (e) => {
     if (e.target.classList.contains('edit')) {
