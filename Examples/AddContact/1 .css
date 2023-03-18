@@ -1,0 +1,131 @@
+main{
+margin-top: 70px;
+display: flex;
+justify-content: center;
+width: 100%;
+gap: 3rem;
+
+}
+#search input{
+border: none;
+outline: none;
+background-color: transparent;
+font-size: 13px;
+
+}
+.searchDiv{
+padding: 8px 20px;
+background-color: cyan;
+border-radius: 999px;
+/*overflow: hidden;
+*/
+}
+.searchDiv i{
+color: #444;
+
+}
+#adduser{
+    border: none;
+padding: 10px 25px;
+border-radius: 999px;
+background-color: cyan;
+}
+.form form i{
+    font-size: 100px;
+}
+.form form .exit {
+    font-size: 40px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+.form form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+    background-color: cyan;
+    margin: 100px  auto;
+    padding:5%;
+    border-radius: 5%;
+    border: 2px solid black;
+
+}
+.form form input{
+    width: 100%;
+    border-radius: 999px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    outline: none;
+    border: none;
+}
+.form form input[type='submit']{
+    width: 30%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 0;
+}
+.form form input[type='submit']:hover{
+    color: cyan;
+    background-color: black;
+    border-radius: 10px;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, .8);
+}
+table{
+    border: 1px solid black;
+    width: 80%;
+    margin: 50px auto;
+}
+table td{
+    padding: 10px 20px;
+    border: 1px solid black;
+    text-align: center;
+    width: 10%;
+    height:60px;
+}
+.delete{
+    color: red;
+    cursor: pointer;
+}
+.delete:hover {
+color: white;
+background-color: red;
+}
+.edit{
+    color:green;
+    cursor: pointer;
+}
+.edit:hover{
+    color: white;
+    background-color: green;
+}
+thead td:hover i{
+    color: red;
+    font-size: 30px;
+    transform: rotate();
+    animation: icons infinite 1s alternate-reverse;
+}
+thead td:hover span {
+    display: none;
+}
+@keyframes icons{
+    0% ,50%{
+        transform: rotate(-45deg);
+    }
+    50% ,100%{
+        transform: rotate(45deg);
+    }
+}
