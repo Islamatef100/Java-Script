@@ -28,12 +28,11 @@ addUser.onclick = () => {
     FormView.style.display = 'block';
 
 }
+exit.onmouseover = () => exit.style = `color:red`
+    exit.onmouseleave = () => exit.style.color = 'black'
 exit.onclick = () => {
     FormView.style.display = 'none';
     clearform()
-    exit.onmouseover = () => exit.style = `color:red`
-    exit.onmouseleave = () => exit.style.color = 'black'
-    
 }
 
 let data = {}
