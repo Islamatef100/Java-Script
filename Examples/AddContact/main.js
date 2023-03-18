@@ -30,6 +30,8 @@ addUser.onclick = () => {
 }
 exit.onclick = () => {
     FormView.style.display = 'none';
+    exit.onmouseover = () => exit.style.color = 'red'
+    exit.onmouseleave = () => exit.style.color = 'black'
     clearform()
 }
 let check = (value) => {
