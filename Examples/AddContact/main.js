@@ -28,11 +28,13 @@ addUser.onclick = () => {
     FormView.style.display = 'block';
 
 }
+
 exit.onmouseover = () => exit.style = `color:red`
-    exit.onmouseleave = () => exit.style.color = 'black'
+exit.onmouseleave = () => exit.style.color = 'black'    
 exit.onclick = () => {
     FormView.style.display = 'none';
     clearform()
+    
 }
 
 let data = {}
@@ -79,7 +81,7 @@ let check = () => {
     else
         return 1
 }
-
+let logo = document.getElementById('logo')
 let saveUserData = (e) => {
     if (check()) { 
         e.preventDefault()
@@ -87,6 +89,12 @@ let saveUserData = (e) => {
         addContactData()
         clearform()
         FormView.style.display = 'none';
+    }
+    else {
+        logo.style.color = 'red'
+        setTimeout(()=> {
+            logo.style.color = 'black'            
+        },200)
     }
 
 }
@@ -147,9 +155,4 @@ searchInput.onkeyup = (e) => {
              row.style.display = 'none'
     })
 }
-
-
-
-
-
 
